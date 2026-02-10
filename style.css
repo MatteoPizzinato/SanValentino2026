@@ -1,0 +1,86 @@
+ :root {
+            --bg-color: #050505;
+            --snake-color: #00ff00;
+            --food-color: #ff00ff;
+            --text-color: #00ff00;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #game-container {
+            position: relative;
+            border: 4px solid var(--text-color);
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+            background-color: #000;
+        }
+
+        canvas { display: block; }
+
+        #score-display {
+            margin: 20px 0;
+            font-size: 0.7rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .highlight { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; }
+
+        #overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            text-align: center;
+        }
+
+        button {
+            font-family: 'Press Start 2P', cursive;
+            background: #00ff00;
+            color: #000;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.1s;
+        }
+        button:hover { transform: scale(1.1); }
+
+        #final-ui {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        /* Particelle a tutto schermo */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 3000;
+            font-size: 30px;
+            animation: rain linear forwards;
+        }
+
+        @keyframes rain {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }

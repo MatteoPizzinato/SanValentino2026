@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEART_DEBUGGER.EXE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="gameLogic.js" defer></script>
+</head>
+<body>
+    <p>IL TUO FIDANZATO È SMEMORATO E VOLEVA CHIEDERTI UNA COSA MA NON SI RICORDA COSA</p>
+    <p style="margin-top: 15px; color: #aaa;">AIUTALO A RECUPERARE LA MEMORIA</p>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="600" height="400"></canvas>
+        <div id="overlay">
+            <button onclick="startGame()">AIUTALO!</button>
+        </div>
+    </div>
+        <div id="score-display">
+        STATUS: <span id="status-text">SYSTEM STANDBY</span><br>
+        PROSSIMA LETTERA: <span id="next-char" class="highlight">-</span>
+    </div>
+
+    <div id="final-ui">
+        <h1 id="final-msg" style="color: #ff0000; text-align: center; padding: 20px;">Vuoi essere il mio giocatore 2?</h1>
+        <div class="final-buttons" id="btn-group">
+            <button onclick="celebrate('si')" style="background: #00ff00;">SÌ</button>
+            <button onclick="celebrate('no')" style="background: #ff0000; color: white;">NO</button>
+        </div>
+    </div>
+</body>
+</html>
